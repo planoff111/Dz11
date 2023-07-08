@@ -1,17 +1,29 @@
 package org.example;
 
+import org.example.sort.BinarySearch;
 import org.example.sort.Graph;
 import org.example.sort.SimpleTree;
 
 import java.util.List;
 
+import static org.example.sort.BinarySearch.search;
 import static org.example.sort.FastSort.quickSort;
 import static org.example.sort.MergeSort.mergeSort;
 
 public class Main {
     public static void main(String[] args) {
-        int[] num = {12, 7, 4, 5, 3, 2, 1, 10};
 
+        int[] arrayForSearch = {2, 3, 3, 6, 8, 8, 12, 17, 23};
+        int key = 23;
+        int index = search(arrayForSearch, key);
+
+        if (index == -1)
+            System.out.println("Element not found");
+        else
+            System.out.println("Element " + key +
+                    " found at index " + index);
+
+        int[] num = {12, 7, 4, 5, 3, 2, 1, 10};
         SimpleTree tree = new SimpleTree();
         tree.add(8);
         tree.add(3);
